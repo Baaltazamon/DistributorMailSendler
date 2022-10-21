@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://tempuri.org/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="DistributorsMaterialArticul" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.khortitsa.com/wcf/Money/2008/Imports">
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?xsd=xsd0" namespace="http://www.khortitsa.com/wcf/Money/2008" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDistributorsMaterialArticul_CollateMaterArticul_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollateMaterArticul" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsMaterialArticul_CollateMaterArticul_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollateMaterArticulResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDistributorsMaterialArticul">
+    <wsdl:operation name="CollateMaterArticul">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsMaterialArticul_nonDataSets/CollateMaterArticul" message="tns:IDistributorsMaterialArticul_CollateMaterArticul_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsMaterialArticul_nonDataSets/CollateMaterArticulResponse" message="tns:IDistributorsMaterialArticul_CollateMaterArticul_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="DistributorsMaterialArticul">
+    <wsdl:port name="BasicHttpBinding_IDistributorsMaterialArticul" binding="i0:BasicHttpBinding_IDistributorsMaterialArticul">
+      <soap:address location="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsMaterialArticul" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

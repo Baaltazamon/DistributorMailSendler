@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" elementFormDefault="qualified" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" />
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MegaDAL_Money_V3.objects" />
+  <xs:element name="InsertDistributorInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDistributorInvoice" nillable="true" type="tns:objectDocumentDistributorInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="objectDocumentDistributorInvoice">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q1:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgentCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="AgentCodeDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DocNumberDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OutletDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutletId" type="xs:int" />
+          <xs:element minOccurs="0" name="PartnerFromCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerFromCodeDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartnerToCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerToCodeDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Positions" nillable="true" type="tns:ArrayOfobjectDocumentDistributorInvoicePosition" />
+          <xs:element minOccurs="0" name="RecId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TypeOper" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectDocumentDistributorInvoice" nillable="true" type="tns:objectDocumentDistributorInvoice" />
+  <xs:complexType name="ArrayOfobjectDocumentDistributorInvoicePosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objectDocumentDistributorInvoicePosition" nillable="true" type="tns:objectDocumentDistributorInvoicePosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfobjectDocumentDistributorInvoicePosition" nillable="true" type="tns:ArrayOfobjectDocumentDistributorInvoicePosition" />
+  <xs:complexType name="objectDocumentDistributorInvoicePosition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q2:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Articul" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeEAN" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="DocRecNo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MaterCode" type="xs:double" />
+          <xs:element minOccurs="0" name="Price" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceWithVAT" type="xs:double" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectDocumentDistributorInvoicePosition" nillable="true" type="tns:objectDocumentDistributorInvoicePosition" />
+  <xs:element name="InsertDistributorInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDistributorInvoiceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDocument" nillable="true" type="tns:objectDocumentInvoice" />
+        <xs:element minOccurs="0" name="paramTransaction" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="objectDocumentInvoice">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q3:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressFromCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AddressToCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AmountInBalanceCurrency" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountInDocCurrency" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BalanceCode" type="xs:int" />
+          <xs:element minOccurs="0" name="BaseID" type="xs:int" />
+          <xs:element minOccurs="0" name="CFOCode" type="xs:int" />
+          <xs:element minOccurs="0" name="CfoFromName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CfoToName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeOper" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractID" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="CountActionsInvoices" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CurrencyCodeBalance" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CurrencyCodeDocument" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DateActual" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateCreate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Delay" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DelayTA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DelivDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DelivTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DocNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="DocType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DontUseSpecPrice" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ExchangeRate" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="ExtraCharge" type="xs:double" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroupOper" type="xs:int" />
+          <xs:element minOccurs="0" name="Guid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvoicePrint" nillable="true" type="tns:objectDocumentInvoicePrint" />
+          <xs:element minOccurs="0" name="IsBanket" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsCreateTaxInvoice" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNotRecalcPrice" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSendNakl" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsSorting" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LinkedDocBaseID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LinkedDocRecID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MobOrderGUID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameOper" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperDate" type="xs:dateTime" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MegaDAL_Money_V3.objects" minOccurs="0" name="OrderSource" type="q4:EnumOrderSource" />
+          <xs:element minOccurs="0" name="OutletBaseID" type="xs:int" />
+          <xs:element minOccurs="0" name="OutletRecID" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentDocBaseID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentDocRecID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PartnerFromCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerFromINN" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerFromName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartnerToCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerToINN" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerToName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartnerViaCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerViaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentForm" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Positions" nillable="true" type="tns:ArrayOfobjectDocumentInvoicePosition" />
+          <xs:element minOccurs="0" name="Present" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PriceFromCurrency" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceType" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="RecID" type="xs:int" />
+          <xs:element minOccurs="0" name="SUFICS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" type="xs:int" />
+          <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SumTotalNds" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="SumTotalWithNds" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="SumTotalWithoutNds" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="SummaLiters" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="TaxDocNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TradeOutletIdentifier" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Transport" type="xs:double" />
+          <xs:element minOccurs="0" name="TriggerOff" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectDocumentInvoice" nillable="true" type="tns:objectDocumentInvoice" />
+  <xs:complexType name="objectDocumentInvoicePrint">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q5:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BnkToName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DispResolution" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DogovorDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DogovorNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KladovResolution" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicDateTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LicNumbTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameLPR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Place" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TAPhone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectDocumentInvoicePrint" nillable="true" type="tns:objectDocumentInvoicePrint" />
+  <xs:complexType name="ArrayOfobjectDocumentInvoicePosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objectDocumentInvoicePosition" nillable="true" type="tns:objectDocumentInvoicePosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfobjectDocumentInvoicePosition" nillable="true" type="tns:ArrayOfobjectDocumentInvoicePosition" />
+  <xs:complexType name="objectDocumentInvoicePosition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q6:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AmountInBalanceCurrency" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountInBalanceCurrencyWithReturning" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountInDocCurrency" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountInDocCurrencyWithReturning" type="xs:double" />
+          <xs:element minOccurs="0" name="ArticulPartner" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BaseID" type="xs:int" />
+          <xs:element minOccurs="0" name="Certif" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountInBox" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="DateCertif" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DatePacking" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DocumentRecID" type="xs:int" />
+          <xs:element minOccurs="0" name="EDIPositionCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FixedPrice" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="GTD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GroupMaterCode" type="xs:int" />
+          <xs:element minOccurs="0" name="GroupMaterName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndSummaWithNDS" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCorrecting" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGetExcBeforeInsert" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsIndikativ" type="xs:int" />
+          <xs:element minOccurs="0" name="MaterCode" type="xs:double" />
+          <xs:element minOccurs="0" name="MaterCodeParent" type="xs:double" />
+          <xs:element minOccurs="0" name="MaterEANNumber" type="xs:double" />
+          <xs:element minOccurs="0" name="MaterInventoryNumber" type="xs:double" />
+          <xs:element minOccurs="0" name="MaterName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterSerialNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriceDiscount" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PricePrev" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceWithNacenka" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceWithNds" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceWithoutDiscount" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+          <xs:element minOccurs="0" name="QuantityWithReturning" type="xs:double" />
+          <xs:element minOccurs="0" name="RecID" type="xs:int" />
+          <xs:element minOccurs="0" name="RegidFromA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegidFromB" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Skidka" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="SumIndikativ" type="xs:double" />
+          <xs:element minOccurs="0" name="SummaAmountTrafic" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="SummaDuty" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="SummaWithNDS" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="SummaWithNDSReturns" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectDocumentInvoicePosition" nillable="true" type="tns:objectDocumentInvoicePosition" />
+  <xs:element name="InsertInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertInvoiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuidByRecIdBaseId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" minOccurs="0" name="paramRecIdBaseId" type="q7:RecIDBaseID" />
+        <xs:element minOccurs="0" name="paramTransaction" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuidByRecIdBaseIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetGuidByRecIdBaseIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRecIdBaseIdByGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramGuid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramTransaction" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRecIdBaseIdByGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindRecIdBaseIdByGuidResult" nillable="true" type="tns:objectRecIDBaseID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="objectRecIDBaseID">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q8:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaseID" type="xs:int" />
+          <xs:element minOccurs="0" name="RecID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectRecIDBaseID" nillable="true" type="tns:objectRecIDBaseID" />
+  <xs:element name="DeleteInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRecIdBaseId" nillable="true" type="tns:objectRecIDBaseID" />
+        <xs:element minOccurs="0" name="paramTransaction" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteInvoiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicePositionsData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRecId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicePositionsDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDistributorInvoicePositionsDataResult" nillable="true" type="tns:ArrayOfobjectDocumentDistributorInvoicePosition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoiceData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramStatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoiceDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDistributorInvoiceDataResult" nillable="true" type="tns:ArrayOfobjectDocumentDistributorInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfobjectDocumentDistributorInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objectDocumentDistributorInvoice" nillable="true" type="tns:objectDocumentDistributorInvoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfobjectDocumentDistributorInvoice" nillable="true" type="tns:ArrayOfobjectDocumentDistributorInvoice" />
+  <xs:element name="InsertDistributorInvoice2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDistributorInvoice" nillable="true" type="tns:objectDocumentDistributorInvoice" />
+        <xs:element minOccurs="0" name="paramLogin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDistributorInvoice2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDistributorInvoice2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDateTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="paramDistrCode" nillable="true" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDistributorInvoicesResult" nillable="true" type="tns:ArrayOfobjectDistributorInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfobjectDistributorInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objectDistributorInvoice" nillable="true" type="tns:objectDistributorInvoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfobjectDistributorInvoice" nillable="true" type="tns:ArrayOfobjectDistributorInvoice" />
+  <xs:complexType name="objectDistributorInvoice">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q9:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgentCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="AgentCodeDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AgentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateTimeInsert" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DocNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DocNumberDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocRecId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OutletDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutletId" type="xs:int" />
+          <xs:element minOccurs="0" name="PartnerFromCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerFromCodeDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartnerFromName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartnerToCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PartnerToCodeDistr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartnerToName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Positions" nillable="true" type="tns:ArrayOfobjectDistributorInvoicePosition" />
+          <xs:element minOccurs="0" name="RecId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TypeOper" type="xs:int" />
+          <xs:element minOccurs="0" name="TypeOperName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectDistributorInvoice" nillable="true" type="tns:objectDistributorInvoice" />
+  <xs:complexType name="ArrayOfobjectDistributorInvoicePosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objectDistributorInvoicePosition" nillable="true" type="tns:objectDistributorInvoicePosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfobjectDistributorInvoicePosition" nillable="true" type="tns:ArrayOfobjectDistributorInvoicePosition" />
+  <xs:complexType name="objectDistributorInvoicePosition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q10:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Articul" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeEAN" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="DocRecNo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MaterCode" type="xs:double" />
+          <xs:element minOccurs="0" name="Price" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceWithVAT" type="xs:double" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectDistributorInvoicePosition" nillable="true" type="tns:objectDistributorInvoicePosition" />
+  <xs:element name="InsertDistributorInvoiceByRecId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRecId" type="xs:int" />
+        <xs:element minOccurs="0" name="paramLogin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDistributorInvoiceByRecIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDistributorInvoiceByRecIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicesByPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDateTimeFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="paramDateTimeTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="paramDistrCode" nillable="true" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicesByPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDistributorInvoicesByPeriodResult" nillable="true" type="tns:ArrayOfobjectDistributorInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicesByPeriodWithoutPositions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDateTimeFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="paramDateTimeTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="paramDistrCode" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="WithoutPositions" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicesByPeriodWithoutPositionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDistributorInvoicesByPeriodWithoutPositionsResult" nillable="true" type="tns:ArrayOfobjectDistributorInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicePositions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRecId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoicePositionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDistributorInvoicePositionsResult" nillable="true" type="tns:ArrayOfobjectDistributorInvoicePosition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoiceDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistributorInvoiceDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDistributorInvoiceDataSetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

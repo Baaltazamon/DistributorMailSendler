@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" elementFormDefault="qualified" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsDebtors?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:element name="CreateDebtorAndOutlet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDebtorTaxNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameDebtor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameOutlet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeDebtorInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeOutletInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDebtorAndOutletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="CreateDebtorAndOutletResult" type="q1:KeyValuePairOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewOutletFromTable">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewOutletFromTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateNewOutletFromTableResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOutlet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramOutletId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOutletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckOutletResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDebtorAndOutlet2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDebtorTaxNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameDebtor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameOutlet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeDebtorInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeOutletInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDebtorAndOutlet2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="CreateDebtorAndOutlet2Result" type="q2:KeyValuePairOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

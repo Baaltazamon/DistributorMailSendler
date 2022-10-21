@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" elementFormDefault="qualified" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/dadatacsharp" />
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" />
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="CreateDebtorAndOutlet2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="debtorTaxNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameDebtor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="debtorAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameOutlet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="outletAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codeDebtorInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="сodeOutletInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="distrCode" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDebtorAndOutlet2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="CreateDebtorAndOutlet2Result" type="q1:KeyValuePairOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDebtorAndOutlet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDebtorTaxNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameDebtor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameOutlet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeDebtorInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeOutletInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDebtorAndOutletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="CreateDebtorAndOutletResult" type="q2:KeyValuePairOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressFromString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressFromStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/dadatacsharp" minOccurs="0" name="GetAddressFromStringResult" nillable="true" type="q3:AddressData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindOutletByKladrCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramHome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramCorps" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramApartment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramLitera" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletKPP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindOutletByKladrCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="FindOutletByKladrCodeResult" type="q4:KeyValuePairOfobjectRecIDBaseIDstringuGvCPfu3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="objectRecIDBaseID">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" base="q5:objectMegaBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaseID" type="xs:int" />
+          <xs:element minOccurs="0" name="RecID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="objectRecIDBaseID" nillable="true" type="tns:objectRecIDBaseID" />
+  <xs:element name="LinkAddressOutletByKladrCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramOutletRecId" type="xs:int" />
+        <xs:element minOccurs="0" name="paramOutletBaseId" type="xs:int" />
+        <xs:element minOccurs="0" name="paramCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramHome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramCorps" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramApartment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramLitera" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorCode" nillable="true" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkAddressOutletByKladrCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkAddressOutletByKladrCodeResult" nillable="true" type="tns:objectRecIDBaseID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAndCreateDebtor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDebtorTaxNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameDebtor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeDebtorInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAndCreateDebtorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckAndCreateDebtorResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAndCreateOutet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDebtorCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramNameOutlet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramGPSLatitude" type="xs:double" />
+        <xs:element minOccurs="0" name="paramGPSLongitude" type="xs:double" />
+        <xs:element minOccurs="0" name="parameCodeOutletInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramHome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramCorps" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramApartment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramLitera" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAndCreateOutetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckAndCreateOutetResult" nillable="true" type="tns:objectRecIDBaseID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTradeOutletAddressToKladr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramListOutlets" nillable="true" type="tns:ArrayOfobjectRecIDBaseID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfobjectRecIDBaseID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objectRecIDBaseID" nillable="true" type="tns:objectRecIDBaseID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfobjectRecIDBaseID" nillable="true" type="tns:ArrayOfobjectRecIDBaseID" />
+  <xs:element name="UpdateTradeOutletAddressToKladrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="UpdateTradeOutletAddressToKladrResult" nillable="true" type="q6:ArrayOfTupleOfintintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAddressByKladrCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAddressByKladrCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindAddressByKladrCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGPSOutlet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramOutlet" nillable="true" type="tns:objectRecIDBaseID" />
+        <xs:element minOccurs="0" name="paramGPSLatitude" type="xs:double" />
+        <xs:element minOccurs="0" name="paramGPSLongitude" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGPSOutletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateGPSOutletResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDistrOutletId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramOutlet" nillable="true" type="tns:objectRecIDBaseID" />
+        <xs:element minOccurs="0" name="paramId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramForOrder" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDistrOutletIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddDistrOutletIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDistrOutletId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDistrOutletIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDistrOutletIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDebtorAndOutlet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramDebtorTaxNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameDebtor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameOutlet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeDebtorInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeOutletInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramOutletRecId" type="xs:int" />
+        <xs:element minOccurs="0" name="paramOutletBaseId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDebtorAndOutletResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="UpdateDebtorAndOutletResult" type="q7:KeyValuePairOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDistributorOutletProtocol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRecid" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="paramDebtorTaxNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameDebtor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramNameOutlet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletKPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramOutletAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeDebtorInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameCodeOutletInDistr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDistrCode" type="xs:double" />
+        <xs:element minOccurs="0" name="paramLogin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorCode" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="OutletRecId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="paramKLADRCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDistributorOutletProtocolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDistributorOutletProtocolResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDistributorOutletProtocol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramRecid" type="xs:int" />
+        <xs:element minOccurs="0" name="paramLogin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramDebtorCode" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="OutletRecId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="paramKLADRCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDistributorOutletProtocolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateDistributorOutletProtocolResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveOutletToArea">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveOutletToAreaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MoveOutletToAreaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

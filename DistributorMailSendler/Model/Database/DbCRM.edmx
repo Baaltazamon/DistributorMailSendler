@@ -1,0 +1,1341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CRMModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Asp_Persons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="IsIT" Type="bit" Nullable="false" />
+          <Property Name="WorkTime" Type="nvarchar(max)" />
+          <Property Name="Skype" Type="nvarchar(max)" />
+          <Property Name="String" Type="nvarchar(max)" />
+          <Property Name="Distributor_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Asp_SpravDistr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="DistributorCode" Type="bigint" Nullable="false" />
+          <Property Name="INN" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="TypeSystem" Type="nvarchar(max)" />
+          <Property Name="TypeDataTransmission" Type="nvarchar(max)" />
+          <Property Name="UsesTabletPC" Type="bit" Nullable="false" />
+          <Property Name="UsesCodeMoney" Type="bit" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar(max)" />
+          <Property Name="TZ" Type="bit" Nullable="false" />
+          <Property Name="LastDocumentDateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastReviseDateTime" Type="datetime" Nullable="false" />
+          <Property Name="IgnoreToDate" Type="datetime" Nullable="false" />
+          <Property Name="PrimarySales" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Asp_Warehouses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPP" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="WarehouseCode" Type="bigint" Nullable="false" />
+          <Property Name="Guid" Type="nvarchar(max)" />
+          <Property Name="Distributor_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="AspNetRoleClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedName" Type="nvarchar" MaxLength="256" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderDisplayName" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "CRM.dbo.AspNetUserRoles" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedUserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEnd" Type="datetimeoffset" Precision="7" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserTokens">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Info" Type="nvarchar(max)" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Distributor_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="DistInvoicePositions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Articul" Type="nvarchar(max)" />
+          <Property Name="CodeEAN" Type="float" />
+          <Property Name="DocRecNo" Type="int" />
+          <Property Name="MaterCode" Type="float" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="PriceWithVAT" Type="float" Nullable="false" />
+          <Property Name="Quantity" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DistInvoices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AgentCode" Type="float" />
+          <Property Name="AgentCodeDistr" Type="nvarchar(max)" />
+          <Property Name="DocNumber" Type="int" />
+          <Property Name="DocNumberDistr" Type="nvarchar(max)" />
+          <Property Name="GUID" Type="nvarchar(max)" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="OperDate" Type="datetime" Nullable="false" />
+          <Property Name="OutletDistr" Type="nvarchar(max)" />
+          <Property Name="OutletId" Type="int" Nullable="false" />
+          <Property Name="PartnerFromCode" Type="float" />
+          <Property Name="PartnerFromCodeDistr" Type="nvarchar(max)" />
+          <Property Name="PartnerToCode" Type="float" />
+          <Property Name="PartnerToCodeDistr" Type="nvarchar(max)" />
+          <Property Name="RecId" Type="int" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="TypeOper" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocLifeCycles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="DateCreate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Faults">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fault" Type="nvarchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Distributor_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="HandlingEmails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="DistrName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="InstructionFiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sub_Id" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FileData" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContentType" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="InstructionMainMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="InstructionSubMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Main_Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NotErrors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sufics" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GUID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Recons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Recon" Type="datetime" Nullable="false" />
+          <Property Name="Obtained" Type="bit" Nullable="false" />
+          <Property Name="ObtainedDate" Type="datetime" />
+          <Property Name="Success" Type="bit" Nullable="false" />
+          <Property Name="SuccessDate" Type="datetime" />
+          <Property Name="Distributor_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="StatusUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Distributor_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Stories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__Faults__Distribu__7849DB76">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Faults" Type="Self.Faults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Faults">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Instructi__Main___09FE775D">
+          <End Role="InstructionMainMenus" Type="Self.InstructionMainMenus" Multiplicity="1" />
+          <End Role="InstructionSubMenus" Type="Self.InstructionSubMenus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstructionMainMenus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InstructionSubMenus">
+              <PropertyRef Name="Main_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Instructi__Sub_I__0CDAE408">
+          <End Role="InstructionSubMenus" Type="Self.InstructionSubMenus" Multiplicity="1" />
+          <End Role="InstructionFiles" Type="Self.InstructionFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstructionSubMenus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InstructionFiles">
+              <PropertyRef Name="Sub_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recons__Distribu__7B264821">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Recons" Type="Self.Recons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Recons">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StatusUpd__Distr__756D6ECB">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="StatusUpdates" Type="Self.StatusUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusUpdates">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleClaims">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserTokens_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserTokens" Type="Self.AspNetUserTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Asp_Persons" Type="Self.Asp_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Asp_Persons">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Asp_Warehouses" Type="Self.Asp_Warehouses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Asp_Warehouses">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CRMModelContainer">
+          <EntitySet Name="Asp_Persons" EntityType="Self.Asp_Persons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Asp_SpravDistr" EntityType="Self.Asp_SpravDistr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Asp_Warehouses" EntityType="Self.Asp_Warehouses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DistInvoicePositions" EntityType="Self.DistInvoicePositions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DistInvoices" EntityType="Self.DistInvoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocLifeCycles" EntityType="Self.DocLifeCycles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faults" EntityType="Self.Faults" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HandlingEmails" EntityType="Self.HandlingEmails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InstructionFiles" EntityType="Self.InstructionFiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InstructionMainMenus" EntityType="Self.InstructionMainMenus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InstructionSubMenus" EntityType="Self.InstructionSubMenus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotErrors" EntityType="Self.NotErrors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recons" EntityType="Self.Recons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusUpdates" EntityType="Self.StatusUpdates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stories" EntityType="Self.Stories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AspNetUserRoles].[UserId] AS [UserId], 
+    [AspNetUserRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[AspNetUserRoles] AS [AspNetUserRoles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Faults__Distribu__7849DB76" Association="Self.FK__Faults__Distribu__7849DB76">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Faults" EntitySet="Faults" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Instructi__Main___09FE775D" Association="Self.FK__Instructi__Main___09FE775D">
+            <End Role="InstructionMainMenus" EntitySet="InstructionMainMenus" />
+            <End Role="InstructionSubMenus" EntitySet="InstructionSubMenus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Instructi__Sub_I__0CDAE408" Association="Self.FK__Instructi__Sub_I__0CDAE408">
+            <End Role="InstructionSubMenus" EntitySet="InstructionSubMenus" />
+            <End Role="InstructionFiles" EntitySet="InstructionFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recons__Distribu__7B264821" Association="Self.FK__Recons__Distribu__7B264821">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Recons" EntitySet="Recons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StatusUpd__Distr__756D6ECB" Association="Self.FK__StatusUpd__Distr__756D6ECB">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="StatusUpdates" EntitySet="StatusUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles_RoleId" Association="Self.FK_AspNetUserRoles_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers_UserId" Association="Self.FK_AspNetUserRoles_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserTokens_AspNetUsers_UserId" Association="Self.FK_AspNetUserTokens_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserTokens" EntitySet="AspNetUserTokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id" Association="Self.FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Asp_Persons" EntitySet="Asp_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id" Association="Self.FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Asp_Warehouses" EntitySet="Asp_Warehouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id" Association="Self.FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Asp_Persons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsIT" Type="Boolean" Nullable="false" />
+          <Property Name="WorkTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Skype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="String" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Distributor_Id" Type="Int32" />
+          <NavigationProperty Name="Asp_SpravDistr" Relationship="Self.FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id" FromRole="Asp_Persons" ToRole="Asp_SpravDistr" />
+        </EntityType>
+        <EntityType Name="Asp_SpravDistr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DistributorCode" Type="Int64" Nullable="false" />
+          <Property Name="INN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeSystem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeDataTransmission" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UsesTabletPC" Type="Boolean" Nullable="false" />
+          <Property Name="UsesCodeMoney" Type="Boolean" Nullable="false" />
+          <Property Name="ShortName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TZ" Type="Boolean" Nullable="false" />
+          <Property Name="LastDocumentDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastReviseDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IgnoreToDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PrimarySales" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Asp_Persons" Relationship="Self.FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id" FromRole="Asp_SpravDistr" ToRole="Asp_Persons" />
+          <NavigationProperty Name="Faults" Relationship="Self.FK__Faults__Distribu__7849DB76" FromRole="Asp_SpravDistr" ToRole="Faults" />
+          <NavigationProperty Name="Recons" Relationship="Self.FK__Recons__Distribu__7B264821" FromRole="Asp_SpravDistr" ToRole="Recons" />
+          <NavigationProperty Name="StatusUpdates" Relationship="Self.FK__StatusUpd__Distr__756D6ECB" FromRole="Asp_SpravDistr" ToRole="StatusUpdates" />
+          <NavigationProperty Name="Asp_Warehouses" Relationship="Self.FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id" FromRole="Asp_SpravDistr" ToRole="Asp_Warehouses" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id" FromRole="Asp_SpravDistr" ToRole="Comments" />
+        </EntityType>
+        <EntityType Name="Asp_Warehouses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WarehouseCode" Type="Int64" Nullable="false" />
+          <Property Name="Guid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Distributor_Id" Type="Int32" />
+          <NavigationProperty Name="Asp_SpravDistr" Relationship="Self.FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id" FromRole="Asp_Warehouses" ToRole="Asp_SpravDistr" />
+        </EntityType>
+        <EntityType Name="AspNetRoleClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoleClaims" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRoleClaims" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoles" ToRole="AspNetRoleClaims" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEnd" Type="DateTimeOffset" Precision="7" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetUserTokens" Relationship="Self.FK_AspNetUserTokens_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserTokens" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="AspNetUserTokens">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserTokens_AspNetUsers_UserId" FromRole="AspNetUserTokens" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Distributor_Id" Type="Int32" />
+          <NavigationProperty Name="Asp_SpravDistr" Relationship="Self.FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id" FromRole="Comments" ToRole="Asp_SpravDistr" />
+        </EntityType>
+        <EntityType Name="DistInvoicePositions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Articul" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeEAN" Type="Double" />
+          <Property Name="DocRecNo" Type="Int32" />
+          <Property Name="MaterCode" Type="Double" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="PriceWithVAT" Type="Double" Nullable="false" />
+          <Property Name="Quantity" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DistInvoices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgentCode" Type="Double" />
+          <Property Name="AgentCodeDistr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DocNumber" Type="Int32" />
+          <Property Name="DocNumberDistr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GUID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OperDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OutletDistr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OutletId" Type="Int32" Nullable="false" />
+          <Property Name="PartnerFromCode" Type="Double" />
+          <Property Name="PartnerFromCodeDistr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PartnerToCode" Type="Double" />
+          <Property Name="PartnerToCodeDistr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecId" Type="Int32" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="TypeOper" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocLifeCycles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Faults">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fault" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Distributor_Id" Type="Int32" />
+          <NavigationProperty Name="Asp_SpravDistr" Relationship="Self.FK__Faults__Distribu__7849DB76" FromRole="Faults" ToRole="Asp_SpravDistr" />
+        </EntityType>
+        <EntityType Name="HandlingEmails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DistrName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InstructionFiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Id" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContentType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InstructionSubMenus" Relationship="Self.FK__Instructi__Sub_I__0CDAE408" FromRole="InstructionFiles" ToRole="InstructionSubMenus" />
+        </EntityType>
+        <EntityType Name="InstructionMainMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InstructionSubMenus" Relationship="Self.FK__Instructi__Main___09FE775D" FromRole="InstructionMainMenus" ToRole="InstructionSubMenus" />
+        </EntityType>
+        <EntityType Name="InstructionSubMenus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Main_Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InstructionFiles" Relationship="Self.FK__Instructi__Sub_I__0CDAE408" FromRole="InstructionSubMenus" ToRole="InstructionFiles" />
+          <NavigationProperty Name="InstructionMainMenus" Relationship="Self.FK__Instructi__Main___09FE775D" FromRole="InstructionSubMenus" ToRole="InstructionMainMenus" />
+        </EntityType>
+        <EntityType Name="NotErrors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sufics" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GUID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Recons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Recon" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Obtained" Type="Boolean" Nullable="false" />
+          <Property Name="ObtainedDate" Type="DateTime" Precision="3" />
+          <Property Name="Success" Type="Boolean" Nullable="false" />
+          <Property Name="SuccessDate" Type="DateTime" Precision="3" />
+          <Property Name="Distributor_Id" Type="Int32" />
+          <NavigationProperty Name="Asp_SpravDistr" Relationship="Self.FK__Recons__Distribu__7B264821" FromRole="Recons" ToRole="Asp_SpravDistr" />
+        </EntityType>
+        <EntityType Name="StatusUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Distributor_Id" Type="Int32" />
+          <NavigationProperty Name="Asp_SpravDistr" Relationship="Self.FK__StatusUpd__Distr__756D6ECB" FromRole="StatusUpdates" ToRole="Asp_SpravDistr" />
+        </EntityType>
+        <EntityType Name="Stories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Asp_Persons" Type="Self.Asp_Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Asp_Persons">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Faults__Distribu__7849DB76">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Faults" Type="Self.Faults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Faults">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recons__Distribu__7B264821">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Recons" Type="Self.Recons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Recons">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StatusUpd__Distr__756D6ECB">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="StatusUpdates" Type="Self.StatusUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusUpdates">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Asp_Warehouses" Type="Self.Asp_Warehouses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Asp_Warehouses">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id">
+          <End Role="Asp_SpravDistr" Type="Self.Asp_SpravDistr" Multiplicity="0..1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asp_SpravDistr">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleClaims">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserTokens_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserTokens" Type="Self.AspNetUserTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Instructi__Sub_I__0CDAE408">
+          <End Role="InstructionSubMenus" Type="Self.InstructionSubMenus" Multiplicity="1" />
+          <End Role="InstructionFiles" Type="Self.InstructionFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstructionSubMenus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InstructionFiles">
+              <PropertyRef Name="Sub_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Instructi__Main___09FE775D">
+          <End Role="InstructionMainMenus" Type="Self.InstructionMainMenus" Multiplicity="1" />
+          <End Role="InstructionSubMenus" Type="Self.InstructionSubMenus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstructionMainMenus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InstructionSubMenus">
+              <PropertyRef Name="Main_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="CRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Asp_Persons" EntityType="Self.Asp_Persons" />
+          <EntitySet Name="Asp_SpravDistr" EntityType="Self.Asp_SpravDistr" />
+          <EntitySet Name="Asp_Warehouses" EntityType="Self.Asp_Warehouses" />
+          <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" />
+          <EntitySet Name="Comments" EntityType="Self.Comments" />
+          <EntitySet Name="DistInvoicePositions" EntityType="Self.DistInvoicePositions" />
+          <EntitySet Name="DistInvoices" EntityType="Self.DistInvoices" />
+          <EntitySet Name="DocLifeCycles" EntityType="Self.DocLifeCycles" />
+          <EntitySet Name="Faults" EntityType="Self.Faults" />
+          <EntitySet Name="HandlingEmails" EntityType="Self.HandlingEmails" />
+          <EntitySet Name="InstructionFiles" EntityType="Self.InstructionFiles" />
+          <EntitySet Name="InstructionMainMenus" EntityType="Self.InstructionMainMenus" />
+          <EntitySet Name="InstructionSubMenus" EntityType="Self.InstructionSubMenus" />
+          <EntitySet Name="NotErrors" EntityType="Self.NotErrors" />
+          <EntitySet Name="Recons" EntityType="Self.Recons" />
+          <EntitySet Name="StatusUpdates" EntityType="Self.StatusUpdates" />
+          <EntitySet Name="Stories" EntityType="Self.Stories" />
+          <AssociationSet Name="FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id" Association="Self.FK_dbo_Asp_Persons_dbo_Asp_SpravDistr_Distributor_Id">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Asp_Persons" EntitySet="Asp_Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Faults__Distribu__7849DB76" Association="Self.FK__Faults__Distribu__7849DB76">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Faults" EntitySet="Faults" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recons__Distribu__7B264821" Association="Self.FK__Recons__Distribu__7B264821">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Recons" EntitySet="Recons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StatusUpd__Distr__756D6ECB" Association="Self.FK__StatusUpd__Distr__756D6ECB">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="StatusUpdates" EntitySet="StatusUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id" Association="Self.FK_dbo_Asp_Warehouses_dbo_Asp_SpravDistr_Distributor_Id">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Asp_Warehouses" EntitySet="Asp_Warehouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id" Association="Self.FK_dbo_Comments_dbo_Asp_SpravDistr_Distributor_Id">
+            <End Role="Asp_SpravDistr" EntitySet="Asp_SpravDistr" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserTokens_AspNetUsers_UserId" Association="Self.FK_AspNetUserTokens_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserTokens" EntitySet="AspNetUserTokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Instructi__Sub_I__0CDAE408" Association="Self.FK__Instructi__Sub_I__0CDAE408">
+            <End Role="InstructionSubMenus" EntitySet="InstructionSubMenus" />
+            <End Role="InstructionFiles" EntitySet="InstructionFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Instructi__Main___09FE775D" Association="Self.FK__Instructi__Main___09FE775D">
+            <End Role="InstructionMainMenus" EntitySet="InstructionMainMenus" />
+            <End Role="InstructionSubMenus" EntitySet="InstructionSubMenus" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CRMModelContainer" CdmEntityContainer="CRMEntities">
+          <EntitySetMapping Name="Asp_Persons">
+            <EntityTypeMapping TypeName="CRMModel.Asp_Persons">
+              <MappingFragment StoreEntitySet="Asp_Persons">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IsIT" ColumnName="IsIT" />
+                <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+                <ScalarProperty Name="Skype" ColumnName="Skype" />
+                <ScalarProperty Name="String" ColumnName="String" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Asp_SpravDistr">
+            <EntityTypeMapping TypeName="CRMModel.Asp_SpravDistr">
+              <MappingFragment StoreEntitySet="Asp_SpravDistr">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DistributorCode" ColumnName="DistributorCode" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="TypeSystem" ColumnName="TypeSystem" />
+                <ScalarProperty Name="TypeDataTransmission" ColumnName="TypeDataTransmission" />
+                <ScalarProperty Name="UsesTabletPC" ColumnName="UsesTabletPC" />
+                <ScalarProperty Name="UsesCodeMoney" ColumnName="UsesCodeMoney" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="TZ" ColumnName="TZ" />
+                <ScalarProperty Name="LastDocumentDateTime" ColumnName="LastDocumentDateTime" />
+                <ScalarProperty Name="LastReviseDateTime" ColumnName="LastReviseDateTime" />
+                <ScalarProperty Name="IgnoreToDate" ColumnName="IgnoreToDate" />
+                <ScalarProperty Name="PrimarySales" ColumnName="PrimarySales" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Asp_Warehouses">
+            <EntityTypeMapping TypeName="CRMModel.Asp_Warehouses">
+              <MappingFragment StoreEntitySet="Asp_Warehouses">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KPP" ColumnName="KPP" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="WarehouseCode" ColumnName="WarehouseCode" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoleClaims">
+            <EntityTypeMapping TypeName="CRMModel.AspNetRoleClaims">
+              <MappingFragment StoreEntitySet="AspNetRoleClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="CRMModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="CRMModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="CRMModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="ProviderDisplayName" ColumnName="ProviderDisplayName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="CRMModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserTokens">
+            <EntityTypeMapping TypeName="CRMModel.AspNetUserTokens">
+              <MappingFragment StoreEntitySet="AspNetUserTokens">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="CRMModel.Comments">
+              <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DistInvoicePositions">
+            <EntityTypeMapping TypeName="CRMModel.DistInvoicePositions">
+              <MappingFragment StoreEntitySet="DistInvoicePositions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Articul" ColumnName="Articul" />
+                <ScalarProperty Name="CodeEAN" ColumnName="CodeEAN" />
+                <ScalarProperty Name="DocRecNo" ColumnName="DocRecNo" />
+                <ScalarProperty Name="MaterCode" ColumnName="MaterCode" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PriceWithVAT" ColumnName="PriceWithVAT" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DistInvoices">
+            <EntityTypeMapping TypeName="CRMModel.DistInvoices">
+              <MappingFragment StoreEntitySet="DistInvoices">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="AgentCodeDistr" ColumnName="AgentCodeDistr" />
+                <ScalarProperty Name="DocNumber" ColumnName="DocNumber" />
+                <ScalarProperty Name="DocNumberDistr" ColumnName="DocNumberDistr" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="OperDate" ColumnName="OperDate" />
+                <ScalarProperty Name="OutletDistr" ColumnName="OutletDistr" />
+                <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+                <ScalarProperty Name="PartnerFromCode" ColumnName="PartnerFromCode" />
+                <ScalarProperty Name="PartnerFromCodeDistr" ColumnName="PartnerFromCodeDistr" />
+                <ScalarProperty Name="PartnerToCode" ColumnName="PartnerToCode" />
+                <ScalarProperty Name="PartnerToCodeDistr" ColumnName="PartnerToCodeDistr" />
+                <ScalarProperty Name="RecId" ColumnName="RecId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TypeOper" ColumnName="TypeOper" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocLifeCycles">
+            <EntityTypeMapping TypeName="CRMModel.DocLifeCycles">
+              <MappingFragment StoreEntitySet="DocLifeCycles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faults">
+            <EntityTypeMapping TypeName="CRMModel.Faults">
+              <MappingFragment StoreEntitySet="Faults">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fault" ColumnName="Fault" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HandlingEmails">
+            <EntityTypeMapping TypeName="CRMModel.HandlingEmails">
+              <MappingFragment StoreEntitySet="HandlingEmails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DistrName" ColumnName="DistrName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstructionFiles">
+            <EntityTypeMapping TypeName="CRMModel.InstructionFiles">
+              <MappingFragment StoreEntitySet="InstructionFiles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Sub_Id" ColumnName="Sub_Id" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileData" ColumnName="FileData" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstructionMainMenus">
+            <EntityTypeMapping TypeName="CRMModel.InstructionMainMenus">
+              <MappingFragment StoreEntitySet="InstructionMainMenus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstructionSubMenus">
+            <EntityTypeMapping TypeName="CRMModel.InstructionSubMenus">
+              <MappingFragment StoreEntitySet="InstructionSubMenus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Main_Id" ColumnName="Main_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotErrors">
+            <EntityTypeMapping TypeName="CRMModel.NotErrors">
+              <MappingFragment StoreEntitySet="NotErrors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Sufics" ColumnName="Sufics" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recons">
+            <EntityTypeMapping TypeName="CRMModel.Recons">
+              <MappingFragment StoreEntitySet="Recons">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Recon" ColumnName="Recon" />
+                <ScalarProperty Name="Obtained" ColumnName="Obtained" />
+                <ScalarProperty Name="ObtainedDate" ColumnName="ObtainedDate" />
+                <ScalarProperty Name="Success" ColumnName="Success" />
+                <ScalarProperty Name="SuccessDate" ColumnName="SuccessDate" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusUpdates">
+            <EntityTypeMapping TypeName="CRMModel.StatusUpdates">
+              <MappingFragment StoreEntitySet="StatusUpdates">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stories">
+            <EntityTypeMapping TypeName="CRMModel.Stories">
+              <MappingFragment StoreEntitySet="Stories">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="CRMModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

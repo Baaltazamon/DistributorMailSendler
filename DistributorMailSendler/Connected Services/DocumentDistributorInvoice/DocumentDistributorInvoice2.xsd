@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="objectMegaBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="objectMegaBase" nillable="true" type="tns:objectMegaBase" />
+  <xs:complexType name="RecIDBaseID">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseID" type="xs:int" />
+      <xs:element minOccurs="0" name="RecID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecIDBaseID" nillable="true" type="tns:RecIDBaseID" />
+</xs:schema>

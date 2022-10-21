@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="5d24c765-cdb9-4973-a32d-a96ae600d436" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DistributorsOutlets.disco" MetadataType="Disco" ID="47a8e4f9-e59d-4ee7-aa5c-877b0ee66530" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?disco" />
+    <MetadataFile FileName="DistributorsOutlets.xsd" MetadataType="Schema" ID="59ea5fe6-af33-4965-ba4f-0c8993c91140" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd3" />
+    <MetadataFile FileName="DistributorsOutlets1.xsd" MetadataType="Schema" ID="166cc06f-a565-495a-b8ef-35189990ea32" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd2" />
+    <MetadataFile FileName="DistributorsOutlets2.xsd" MetadataType="Schema" ID="e14907c3-559c-48d3-b926-39229d51b08c" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd1" />
+    <MetadataFile FileName="DistributorsOutlets.wsdl" MetadataType="Wsdl" ID="d43c8b88-dd4e-4fa0-aed4-d4ff16a4d8ee" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?wsdl" />
+    <MetadataFile FileName="DistributorsOutlets3.xsd" MetadataType="Schema" ID="4c7bbf4c-8ae3-49a1-9158-88fd85f51ecb" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd0" />
+    <MetadataFile FileName="DistributorsOutlets4.xsd" MetadataType="Schema" ID="a819358c-8a39-4b73-9ff9-f2b32a509d4a" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd5" />
+    <MetadataFile FileName="DistributorsOutlets5.xsd" MetadataType="Schema" ID="8f44c05c-726b-4433-bfa1-0ae4e126702d" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd4" />
+    <MetadataFile FileName="DistributorsOutlets1.wsdl" MetadataType="Wsdl" ID="3bfce108-73b3-4641-814e-48ff327f7dfb" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1999f0ec-f9ed-4085-b331-967df48918ab" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DocumentDistributorInvoice.xsd" MetadataType="Schema" ID="1f1957f6-dde4-4ef1-91ed-ba2c87335d33" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd3" />
+    <MetadataFile FileName="DocumentDistributorInvoice1.xsd" MetadataType="Schema" ID="01da8540-ab1e-45dc-9646-cf0ca608982a" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd1" />
+    <MetadataFile FileName="DocumentDistributorInvoice.wsdl" MetadataType="Wsdl" ID="43edc013-baf8-492a-97ef-6b6b4a1d06b2" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?wsdl" />
+    <MetadataFile FileName="DocumentDistributorInvoice2.xsd" MetadataType="Schema" ID="cb28c19e-d370-4120-a620-4fc733e4d852" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd2" />
+    <MetadataFile FileName="DocumentDistributorInvoice.disco" MetadataType="Disco" ID="91bd9cf9-4108-4b59-89ce-7ab42e7e6fcf" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?disco" />
+    <MetadataFile FileName="DocumentDistributorInvoice3.xsd" MetadataType="Schema" ID="60ce0c1a-aa56-45fd-8549-88ef184cdf9a" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd4" />
+    <MetadataFile FileName="DocumentDistributorInvoice1.wsdl" MetadataType="Wsdl" ID="976b7988-9098-4f0a-884f-a900eeba73c3" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?wsdl=wsdl0" />
+    <MetadataFile FileName="DocumentDistributorInvoice4.xsd" MetadataType="Schema" ID="224a97ef-ae33-4d41-a993-cb458c3e3ddb" SourceId="1" SourceUrl="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

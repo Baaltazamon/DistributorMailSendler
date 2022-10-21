@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MegaDAL_Money_V3.objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MegaDAL_Money_V3.objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="EnumOrderSource">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="EDI" />
+      <xs:enumeration value="GlobalMarket" />
+      <xs:enumeration value="Postavki" />
+      <xs:enumeration value="ERP" />
+      <xs:enumeration value="CallCentre" />
+      <xs:enumeration value="LPR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumOrderSource" nillable="true" type="tns:EnumOrderSource" />
+</xs:schema>

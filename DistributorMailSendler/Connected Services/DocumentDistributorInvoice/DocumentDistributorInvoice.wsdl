@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://tempuri.org/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="DocumentDistributorInvoice" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.khortitsa.com/wcf/Money/2008/Imports">
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd0" namespace="http://www.khortitsa.com/wcf/Money/2008" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MegaDAL_Money_V3.objects" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?xsd=xsd4" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertDistributorInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertDistributorInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetGuidByRecIdBaseId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuidByRecIdBaseId" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetGuidByRecIdBaseId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuidByRecIdBaseIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_FindRecIdBaseIdByGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecIdBaseIdByGuid" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_FindRecIdBaseIdByGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecIdBaseIdByGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_DeleteInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_DeleteInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicePositionsData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicePositionsData" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicePositionsData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicePositionsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoiceData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoiceData" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoiceData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoiceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertDistributorInvoice2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorInvoice2" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertDistributorInvoice2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorInvoice2Response" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertDistributorInvoiceByRecId_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorInvoiceByRecId" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_InsertDistributorInvoiceByRecId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorInvoiceByRecIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicesByPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicesByPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicesByPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicesByPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicesByPeriodWithoutPositions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicesByPeriodWithoutPositions" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicesByPeriodWithoutPositions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicesByPeriodWithoutPositionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicePositions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicePositions" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoicePositions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoicePositionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoiceDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoiceDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentDistributorInvoice_GetDistributorInvoiceDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistributorInvoiceDataSetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDocumentDistributorInvoice">
+    <wsdl:operation name="InsertDistributorInvoice">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoice" message="tns:IDocumentDistributorInvoice_InsertDistributorInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoiceResponse" message="tns:IDocumentDistributorInvoice_InsertDistributorInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInvoice">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertInvoice" message="tns:IDocumentDistributorInvoice_InsertInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertInvoiceResponse" message="tns:IDocumentDistributorInvoice_InsertInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuidByRecIdBaseId">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetGuidByRecIdBaseId" message="tns:IDocumentDistributorInvoice_GetGuidByRecIdBaseId_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetGuidByRecIdBaseIdResponse" message="tns:IDocumentDistributorInvoice_GetGuidByRecIdBaseId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRecIdBaseIdByGuid">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/FindRecIdBaseIdByGuid" message="tns:IDocumentDistributorInvoice_FindRecIdBaseIdByGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/FindRecIdBaseIdByGuidResponse" message="tns:IDocumentDistributorInvoice_FindRecIdBaseIdByGuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoice">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/DeleteInvoice" message="tns:IDocumentDistributorInvoice_DeleteInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/DeleteInvoiceResponse" message="tns:IDocumentDistributorInvoice_DeleteInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicePositionsData">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicePositionsData" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicePositionsData_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicePositionsDataResponse" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicePositionsData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoiceData">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoiceData" message="tns:IDocumentDistributorInvoice_GetDistributorInvoiceData_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoiceDataResponse" message="tns:IDocumentDistributorInvoice_GetDistributorInvoiceData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDistributorInvoice2">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoice2" message="tns:IDocumentDistributorInvoice_InsertDistributorInvoice2_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoice2Response" message="tns:IDocumentDistributorInvoice_InsertDistributorInvoice2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoices">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoices" message="tns:IDocumentDistributorInvoice_GetDistributorInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicesResponse" message="tns:IDocumentDistributorInvoice_GetDistributorInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDistributorInvoiceByRecId">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoiceByRecId" message="tns:IDocumentDistributorInvoice_InsertDistributorInvoiceByRecId_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoiceByRecIdResponse" message="tns:IDocumentDistributorInvoice_InsertDistributorInvoiceByRecId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicesByPeriod">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicesByPeriod" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicesByPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicesByPeriodResponse" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicesByPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicesByPeriodWithoutPositions">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicesByPeriodWithoutPositions" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicesByPeriodWithoutPositions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicesByPeriodWithoutPositionsResponse" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicesByPeriodWithoutPositions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicePositions">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicePositions" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicePositions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicePositionsResponse" message="tns:IDocumentDistributorInvoice_GetDistributorInvoicePositions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoiceDataSet">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice/GetDistributorInvoiceDataSet" message="tns:IDocumentDistributorInvoice_GetDistributorInvoiceDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice/GetDistributorInvoiceDataSetResponse" message="tns:IDocumentDistributorInvoice_GetDistributorInvoiceDataSet_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="DocumentDistributorInvoice">
+    <wsdl:port name="BasicHttpBinding_IDocumentDistributorInvoice" binding="i0:BasicHttpBinding_IDocumentDistributorInvoice">
+      <soap:address location="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

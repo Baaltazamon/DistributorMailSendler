@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c556cafd-387c-4330-a93c-5d9429da4418" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://megawinsvc-money-v3-dst.khortitsa.com:8000/MegaDAL_Money_V3/DistributorsMaterialArticul" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DistributorsMaterialArticul.wsdl" MetadataType="Wsdl" ID="471c536b-46bb-4eb2-9447-643ef6546150" SourceId="1" SourceUrl="http://megawinsvc-money-v3-dst.khortitsa.com:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?wsdl" />
+    <MetadataFile FileName="DistributorsMaterialArticul.xsd" MetadataType="Schema" ID="ec96b1d0-ed4b-4491-b7ca-8709a1f0842b" SourceId="1" SourceUrl="http://megawinsvc-money-v3-dst.khortitsa.com:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?xsd=xsd0" />
+    <MetadataFile FileName="DistributorsMaterialArticul1.wsdl" MetadataType="Wsdl" ID="4f2bcf6e-1ebc-42de-8790-bccb59705c2f" SourceId="1" SourceUrl="http://megawinsvc-money-v3-dst.khortitsa.com:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?wsdl=wsdl0" />
+    <MetadataFile FileName="DistributorsMaterialArticul.disco" MetadataType="Disco" ID="b22aed75-a600-4378-b785-ef4fdc2fc76e" SourceId="1" SourceUrl="http://megawinsvc-money-v3-dst.khortitsa.com:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?disco" />
+    <MetadataFile FileName="DistributorsMaterialArticul1.xsd" MetadataType="Schema" ID="683f1b93-9ec8-434c-876a-3d62d4fbcd2e" SourceId="1" SourceUrl="http://megawinsvc-money-v3-dst.khortitsa.com:8000/MegaDAL_Money_V3/DistributorsMaterialArticul?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

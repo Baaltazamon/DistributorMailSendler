@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;BasicHttpBinding_IDocumentDistributorInvoice&quot; /&gt;" bindingType="basicHttpBinding" name="BasicHttpBinding_IDocumentDistributorInvoice" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IDocumentDistributorInvoice&quot; contract=&quot;DocumentDistributorInvoice.IDocumentDistributorInvoice&quot; name=&quot;BasicHttpBinding_IDocumentDistributorInvoice&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IDocumentDistributorInvoice&quot; contract=&quot;DocumentDistributorInvoice.IDocumentDistributorInvoice&quot; name=&quot;BasicHttpBinding_IDocumentDistributorInvoice&quot; /&gt;" contractName="DocumentDistributorInvoice.IDocumentDistributorInvoice" name="BasicHttpBinding_IDocumentDistributorInvoice" />
+  </endpoints>
+</configurationSnapshot>

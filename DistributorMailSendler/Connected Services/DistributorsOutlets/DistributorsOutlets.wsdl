@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://tempuri.org/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="DistributorsOutlets" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.khortitsa.com/wcf/Money/2008/Imports">
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd0" namespace="http://www.khortitsa.com/wcf/Money/2008" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/dadatacsharp" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/MegaUtils_V3.objects" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDistributorsOutlets_CreateDebtorAndOutlet2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutlet2" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_CreateDebtorAndOutlet2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutlet2Response" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_CreateDebtorAndOutlet_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutlet" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_CreateDebtorAndOutlet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_GetAddressFromString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressFromString" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_GetAddressFromString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressFromStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_FindOutletByKladrCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOutletByKladrCode" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_FindOutletByKladrCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOutletByKladrCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_LinkAddressOutletByKladrCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkAddressOutletByKladrCode" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_LinkAddressOutletByKladrCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkAddressOutletByKladrCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_CheckAndCreateDebtor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAndCreateDebtor" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_CheckAndCreateDebtor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAndCreateDebtorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_CheckAndCreateOutet_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAndCreateOutet" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_CheckAndCreateOutet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAndCreateOutetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateTradeOutletAddressToKladr_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTradeOutletAddressToKladr" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateTradeOutletAddressToKladr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTradeOutletAddressToKladrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_FindAddressByKladrCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAddressByKladrCode" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_FindAddressByKladrCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAddressByKladrCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateGPSOutlet_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGPSOutlet" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateGPSOutlet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGPSOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_AddDistrOutletId_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDistrOutletId" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_AddDistrOutletId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDistrOutletIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_DeleteDistrOutletId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDistrOutletId" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_DeleteDistrOutletId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDistrOutletIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateDebtorAndOutlet_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDebtorAndOutlet" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateDebtorAndOutlet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDebtorAndOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_InsertDistributorOutletProtocol_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorOutletProtocol" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_InsertDistributorOutletProtocol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDistributorOutletProtocolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateDistributorOutletProtocol_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDistributorOutletProtocol" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_UpdateDistributorOutletProtocol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDistributorOutletProtocolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_MoveOutletToArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOutletToArea" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsOutlets_MoveOutletToArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOutletToAreaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDistributorsOutlets">
+    <wsdl:operation name="CreateDebtorAndOutlet2">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CreateDebtorAndOutlet2" message="tns:IDistributorsOutlets_CreateDebtorAndOutlet2_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CreateDebtorAndOutlet2Response" message="tns:IDistributorsOutlets_CreateDebtorAndOutlet2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDebtorAndOutlet">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CreateDebtorAndOutlet" message="tns:IDistributorsOutlets_CreateDebtorAndOutlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CreateDebtorAndOutletResponse" message="tns:IDistributorsOutlets_CreateDebtorAndOutlet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressFromString">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/GetAddressFromString" message="tns:IDistributorsOutlets_GetAddressFromString_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/GetAddressFromStringResponse" message="tns:IDistributorsOutlets_GetAddressFromString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindOutletByKladrCode">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/FindOutletByKladrCode" message="tns:IDistributorsOutlets_FindOutletByKladrCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/FindOutletByKladrCodeResponse" message="tns:IDistributorsOutlets_FindOutletByKladrCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkAddressOutletByKladrCode">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/LinkAddressOutletByKladrCode" message="tns:IDistributorsOutlets_LinkAddressOutletByKladrCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/LinkAddressOutletByKladrCodeResponse" message="tns:IDistributorsOutlets_LinkAddressOutletByKladrCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAndCreateDebtor">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CheckAndCreateDebtor" message="tns:IDistributorsOutlets_CheckAndCreateDebtor_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CheckAndCreateDebtorResponse" message="tns:IDistributorsOutlets_CheckAndCreateDebtor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAndCreateOutet">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CheckAndCreateOutet" message="tns:IDistributorsOutlets_CheckAndCreateOutet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/CheckAndCreateOutetResponse" message="tns:IDistributorsOutlets_CheckAndCreateOutet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTradeOutletAddressToKladr">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateTradeOutletAddressToKladr" message="tns:IDistributorsOutlets_UpdateTradeOutletAddressToKladr_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateTradeOutletAddressToKladrResponse" message="tns:IDistributorsOutlets_UpdateTradeOutletAddressToKladr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAddressByKladrCode">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/FindAddressByKladrCode" message="tns:IDistributorsOutlets_FindAddressByKladrCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/FindAddressByKladrCodeResponse" message="tns:IDistributorsOutlets_FindAddressByKladrCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGPSOutlet">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateGPSOutlet" message="tns:IDistributorsOutlets_UpdateGPSOutlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateGPSOutletResponse" message="tns:IDistributorsOutlets_UpdateGPSOutlet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDistrOutletId">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/AddDistrOutletId" message="tns:IDistributorsOutlets_AddDistrOutletId_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/AddDistrOutletIdResponse" message="tns:IDistributorsOutlets_AddDistrOutletId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDistrOutletId">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/DeleteDistrOutletId" message="tns:IDistributorsOutlets_DeleteDistrOutletId_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/DeleteDistrOutletIdResponse" message="tns:IDistributorsOutlets_DeleteDistrOutletId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDebtorAndOutlet">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateDebtorAndOutlet" message="tns:IDistributorsOutlets_UpdateDebtorAndOutlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateDebtorAndOutletResponse" message="tns:IDistributorsOutlets_UpdateDebtorAndOutlet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDistributorOutletProtocol">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/InsertDistributorOutletProtocol" message="tns:IDistributorsOutlets_InsertDistributorOutletProtocol_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/InsertDistributorOutletProtocolResponse" message="tns:IDistributorsOutlets_InsertDistributorOutletProtocol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDistributorOutletProtocol">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateDistributorOutletProtocol" message="tns:IDistributorsOutlets_UpdateDistributorOutletProtocol_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/UpdateDistributorOutletProtocolResponse" message="tns:IDistributorsOutlets_UpdateDistributorOutletProtocol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveOutletToArea">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/MoveOutletToArea" message="tns:IDistributorsOutlets_MoveOutletToArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsOutlets_nonDataSets/MoveOutletToAreaResponse" message="tns:IDistributorsOutlets_MoveOutletToArea_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="DistributorsOutlets">
+    <wsdl:port name="BasicHttpBinding_IDistributorsOutlets" binding="i0:BasicHttpBinding_IDistributorsOutlets">
+      <soap:address location="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsOutlets" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

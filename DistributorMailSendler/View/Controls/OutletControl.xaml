@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="DistributorMailSendler.View.Controls.OutletControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DistributorMailSendler.View.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Outlets}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код дистрибьютора" Width="1*" Binding="{Binding CodeDistr}"/>
+                <DataGridTextColumn Header="Код партнера" Width="1*" Binding="{Binding PartnerCode}"/>
+                <DataGridTextColumn Header="ИНН партнера" Width="1*" Binding="{Binding PartnerINN}"/>
+                <DataGridTextColumn Header="КПП партнера" Width="1*" Binding="{Binding PartnerKPP}"/>
+                <DataGridTextColumn Header="Название" Width="2*" Binding="{Binding PartnerName}"/>
+                <DataGridTextColumn Header="Адрес" Width="3*" Binding="{Binding PartnerAddress}"/>
+                <DataGridTextColumn Header="Код магазина" Width="1*" Binding="{Binding OutletCode}"/>
+                <DataGridTextColumn Header="КПП магазина" Width="1*" Binding="{Binding OutletKPP}"/>
+                <DataGridTextColumn Header="Название магазина" Width="2*" Binding="{Binding OutletName}"/>
+                <DataGridTextColumn Header="Адрес магазина" Width="3*" Binding="{Binding OutletAddress}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

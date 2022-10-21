@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://tempuri.org/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="DistributorsDebtors" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsDebtors?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.khortitsa.com/wcf/Money/2008/Imports">
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsDebtors?xsd=xsd0" namespace="http://www.khortitsa.com/wcf/Money/2008" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsDebtors?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsDebtors?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDistributorsDebtors_CreateDebtorAndOutlet_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutlet" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsDebtors_CreateDebtorAndOutlet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsDebtors_CreateNewOutletFromTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewOutletFromTable" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsDebtors_CreateNewOutletFromTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewOutletFromTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsDebtors_CheckOutlet_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutlet" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsDebtors_CheckOutlet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsDebtors_CreateDebtorAndOutlet2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutlet2" />
+  </wsdl:message>
+  <wsdl:message name="IDistributorsDebtors_CreateDebtorAndOutlet2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDebtorAndOutlet2Response" />
+  </wsdl:message>
+  <wsdl:portType name="IDistributorsDebtors">
+    <wsdl:operation name="CreateDebtorAndOutlet">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CreateDebtorAndOutlet" message="tns:IDistributorsDebtors_CreateDebtorAndOutlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CreateDebtorAndOutletResponse" message="tns:IDistributorsDebtors_CreateDebtorAndOutlet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOutletFromTable">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CreateNewOutletFromTable" message="tns:IDistributorsDebtors_CreateNewOutletFromTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CreateNewOutletFromTableResponse" message="tns:IDistributorsDebtors_CreateNewOutletFromTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutlet">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CheckOutlet" message="tns:IDistributorsDebtors_CheckOutlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CheckOutletResponse" message="tns:IDistributorsDebtors_CheckOutlet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDebtorAndOutlet2">
+      <wsdl:input wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CreateDebtorAndOutlet2" message="tns:IDistributorsDebtors_CreateDebtorAndOutlet2_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.khortitsa.com/wcf/Money/2008/IDistributorsDebtors_nonDataSets/CreateDebtorAndOutlet2Response" message="tns:IDistributorsDebtors_CreateDebtorAndOutlet2_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="DistributorsDebtors">
+    <wsdl:port name="BasicHttpBinding_IDistributorsDebtors" binding="i0:BasicHttpBinding_IDistributorsDebtors">
+      <soap:address location="http://svc-money-rus:8000/MegaDAL_Money_V3/DistributorsDebtors" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

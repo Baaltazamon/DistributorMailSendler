@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.khortitsa.com/wcf/Money/2008" elementFormDefault="qualified" targetNamespace="http://www.khortitsa.com/wcf/Money/2008" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CollateMaterArticul">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paramCodeEan" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="paramArticul" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paramMaterName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CollateMaterArticulResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CollateMaterArticulResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

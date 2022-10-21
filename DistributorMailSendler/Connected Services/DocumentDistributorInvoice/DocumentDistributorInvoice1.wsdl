@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://www.khortitsa.com/wcf/Money/2008" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.khortitsa.com/wcf/Money/2008" location="http://svc-money-rus:8000/MegaDAL_Money_V3/DocumentDistributorInvoice?wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IDocumentDistributorInvoice" type="i0:IDocumentDistributorInvoice">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertDistributorInvoice">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInvoice">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuidByRecIdBaseId">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetGuidByRecIdBaseId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRecIdBaseIdByGuid">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/FindRecIdBaseIdByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoice">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/DeleteInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicePositionsData">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicePositionsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoiceData">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoiceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDistributorInvoice2">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoice2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoices">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDistributorInvoiceByRecId">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/InsertDistributorInvoiceByRecId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicesByPeriod">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicesByPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicesByPeriodWithoutPositions">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicesByPeriodWithoutPositions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoicePositions">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice_nonDataSets/GetDistributorInvoicePositions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistributorInvoiceDataSet">
+      <soap:operation soapAction="http://www.khortitsa.com/wcf/Money/2008/IDocumentDistributorInvoice/GetDistributorInvoiceDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

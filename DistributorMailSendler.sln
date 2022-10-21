@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributorMailSendler", "DistributorMailSendler\DistributorMailSendler.csproj", "{D8D08664-652E-4EA6-9B17-5F0D40B84DE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8D08664-652E-4EA6-9B17-5F0D40B84DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8D08664-652E-4EA6-9B17-5F0D40B84DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8D08664-652E-4EA6-9B17-5F0D40B84DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8D08664-652E-4EA6-9B17-5F0D40B84DE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A12D666-3B0E-4C31-8600-157B48DA5153}
+	EndGlobalSection
+EndGlobal

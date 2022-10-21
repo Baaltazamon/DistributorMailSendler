@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8D08664-652E-4EA6-9B17-5F0D40B84DE4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DistributorMailSendler</RootNamespace>
+    <AssemblyName>DistributorMailSendler</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_cloud_sync_1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.9.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.9\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.6.1.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.6.1\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="View\Controls\NomenclatureControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\OutletControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\RemainsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\TurnoverControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connected Services\DistributorsDebtors\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\DistributorsMaterialArticul\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\DistributorsOutlets\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\DocumentDistributorInvoice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\OldDistributorsMaterialArticul\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\AspNetRoleClaims.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\AspNetRoles.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\AspNetUserClaims.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\AspNetUserLogins.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\AspNetUsers.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\AspNetUserTokens.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\Asp_Persons.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\Asp_SpravDistr.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\Asp_Warehouses.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\Comments.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\DbCRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbCRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\DbCRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\DbCRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbCRM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\DistInvoicePositions.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\DistInvoices.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\DocLifeCycles.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\Faults.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\HandlingEmails.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\InstructionFiles.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\InstructionMainMenus.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\InstructionSubMenus.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\NotErrors.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\Recons.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\StatusUpdates.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\Stories.cs">
+      <DependentUpon>DbCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Nomenclature.cs" />
+    <Compile Include="Model\Outlet.cs" />
+    <Compile Include="Model\Position.cs" />
+    <Compile Include="Model\Remains.cs" />
+    <Compile Include="Model\Turnover.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\Controls\NomenclatureControl.xaml.cs">
+      <DependentUpon>NomenclatureControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\OutletControl.xaml.cs">
+      <DependentUpon>OutletControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\RemainsControl.xaml.cs">
+      <DependentUpon>RemainsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\TurnoverControl.xaml.cs">
+      <DependentUpon>TurnoverControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataViewWindow.xaml.cs">
+      <DependentUpon>DataViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\MainCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\DistributorsDebtors\DistributorsDebtors.wsdl" />
+    <None Include="Connected Services\DistributorsDebtors\DistributorsDebtors.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsDebtors\DistributorsDebtors1.wsdl" />
+    <None Include="Connected Services\DistributorsDebtors\DistributorsDebtors1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsDebtors\DistributorsDebtors2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsMaterialArticul\DistributorsMaterialArticul.wsdl" />
+    <None Include="Connected Services\DistributorsMaterialArticul\DistributorsMaterialArticul.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsMaterialArticul\DistributorsMaterialArticul1.wsdl" />
+    <None Include="Connected Services\DistributorsMaterialArticul\DistributorsMaterialArticul1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorMailSendler.DistributorsOutlets.AddressData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorMailSendler.DistributorsOutlets.objectRecIDBaseID.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets.wsdl" />
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets1.wsdl" />
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DistributorMailSendler.DocumentDistributorInvoice.objectDistributorInvoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DistributorMailSendler.DocumentDistributorInvoice.objectDistributorInvoicePosition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DistributorMailSendler.DocumentDistributorInvoice.objectDocumentDistributorInvoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DistributorMailSendler.DocumentDistributorInvoice.objectDocumentDistributorInvoicePosition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DistributorMailSendler.DocumentDistributorInvoice.objectRecIDBaseID.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice.wsdl" />
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice1.wsdl" />
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Model\Database\DbCRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbCRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Connected Services\OldDistributorsMaterialArticul\DistributorsMaterialArticul.wsdl" />
+    <None Include="Connected Services\OldDistributorsMaterialArticul\DistributorsMaterialArticul.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OldDistributorsMaterialArticul\DistributorsMaterialArticul1.wsdl" />
+    <None Include="Connected Services\OldDistributorsMaterialArticul\DistributorsMaterialArticul1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\Database\DbCRM.edmx.diagram">
+      <DependentUpon>DbCRM.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons8_multiply_48px_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons8_subtract_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons8_xml_transformer_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons8_cloud_sync_160px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_cloud_sync_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DistributorsDebtors\" />
+    <WCFMetadataStorage Include="Connected Services\DistributorsMaterialArticul\" />
+    <WCFMetadataStorage Include="Connected Services\DistributorsOutlets\" />
+    <WCFMetadataStorage Include="Connected Services\DocumentDistributorInvoice\" />
+    <WCFMetadataStorage Include="Connected Services\OldDistributorsMaterialArticul\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DocumentDistributorInvoice\DocumentDistributorInvoice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DocumentDistributorInvoice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DocumentDistributorInvoice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DocumentDistributorInvoice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsOutlets\DistributorsOutlets.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsOutlets\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsOutlets\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsOutlets\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsMaterialArticul\DistributorsMaterialArticul.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsMaterialArticul\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsMaterialArticul\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsMaterialArticul\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsDebtors\DistributorsDebtors.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsDebtors\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsDebtors\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DistributorsDebtors\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\OldDistributorsMaterialArticul\DistributorsMaterialArticul.disco" />
+    <None Include="Connected Services\OldDistributorsMaterialArticul\configuration91.svcinfo" />
+    <None Include="Connected Services\OldDistributorsMaterialArticul\configuration.svcinfo" />
+    <None Include="Connected Services\OldDistributorsMaterialArticul\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Model\Database\DbCRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbCRM.Context.cs</LastGenOutput>
+      <DependentUpon>DbCRM.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Database\DbCRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbCRM.edmx</DependentUpon>
+      <LastGenOutput>DbCRM.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
